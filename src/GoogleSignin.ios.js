@@ -6,7 +6,6 @@ import {
   NativeAppEventEmitter,
   NativeModules,
   requireNativeComponent,
-  ViewPropTypes,
 } from 'react-native';
 
 const { RNGoogleSignin } = NativeModules;
@@ -15,7 +14,7 @@ const RNGoogleSigninButton = requireNativeComponent('RNGoogleSigninButton', null
 
 class GoogleSigninButton extends Component {
   static propTypes = {
-    ...ViewPropTypes,
+    ...View.propTypes,
     size: PropTypes.number,
     color: PropTypes.number
   };
@@ -39,18 +38,6 @@ class GoogleSigninButton extends Component {
     );
   }
 }
-
-GoogleSigninButton.Size = {
-  Icon: RNGoogleSignin.BUTTON_SIZE_ICON,
-  Standard: RNGoogleSignin.BUTTON_SIZE_STANDARD,
-  Wide: RNGoogleSignin.BUTTON_SIZE_WIDE
-};
-
-GoogleSigninButton.Color = {
-  Auto: RNGoogleSignin.BUTTON_COLOR_AUTO,
-  Light: RNGoogleSignin.BUTTON_COLOR_LIGHT,
-  Dark: RNGoogleSignin.BUTTON_COLOR_DARK
-};
 
 class GoogleSignin {
 
